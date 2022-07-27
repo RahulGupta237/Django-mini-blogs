@@ -1,0 +1,51 @@
+{% extends 'Blog/base.html' %}
+
+{% load static %}
+
+{% block content %}
+<style>
+
+.err{
+    color: rgb(243, 30, 30);
+}
+</style>
+
+
+<div class="col-sm-10">
+    <h1 class="text-white my-5">Login Page</h1>
+
+    {% if messages %}
+    {% for msg in messages %}
+    <small {% if msg.tags %} class="{{msg.tags}}" {% endif %}>{{msg}}</small>
+    {% endfor %}
+    {% endif %}
+
+
+
+    <form action="" class="px-4 py-3 colorform texcolor" method="POST">
+        <h1 style="color: rgb(124, 0, 128);" class="text-center">Login</h1>
+        {% csrf_token %}
+        {% if forms.non_field_errors %}
+
+        {% for error in forms.non_field_errors %}
+        <p class="err">{{error}}</p>
+        {% endfor %}
+        {% endif %}
+      <div class="form-group">
+
+        {% for fm in forms %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+        {% endfor %}
+      </div>
+    
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    
+    </form>
+
+ 
+
+
+
+</div>
+
+{% endblock content %}

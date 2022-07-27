@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(75, 74, 74);
+    color: antiquewhite;
+}
+
+.jumbo-color{
+
+    background-color: rgb(175, 139, 139);
+
+
+}
+
+.colorform{
+
+    background-color: rgb(218, 197, 216);
+    color: black;
+}
+
+.success{
+    color: green;
+    font-size: medium;
+}
+
+.err{
+    color: rgb(243, 30, 30);
+}
